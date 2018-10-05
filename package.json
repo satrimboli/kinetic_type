@@ -27,7 +27,8 @@
     "ember-cli-sass": "^6.2.0",
     "ember-cli-uglify": "^2.0.0-beta.1",
     "qunitjs": "^2.3.3",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2",
+    "jquery": "^3.2.1"
   },
   "engines": {
     "node": ">= 4.0"

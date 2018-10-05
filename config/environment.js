@@ -3,7 +3,8 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'kinetic-type',
-    environment: environment
+    environment: environment,
+    rootURL: '/'
   };
 
   return ENV;

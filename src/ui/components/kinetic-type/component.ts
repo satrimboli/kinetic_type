@@ -1,4 +1,5 @@
 import Component, { tracked } from '@glimmer/component';
+import 'jquery';
 
 export default class KineticType extends Component {
   @tracked state = {
@@ -15,28 +16,29 @@ export default class KineticType extends Component {
       startTime: play ? window.performance.now() : null
     }
 
-    console.log(play)
     if(play) {
       this.timer = window.requestAnimationFrame(this.tick.bind(this))
     } else {
-      console.log(this.timer)
       cancelAnimationFrame(this.timer);
     }
   }
 
   tick(timestamp) {
-    console.log(timestamp)
-    console.log(this.state.startTime)
     var timeElapsed = (timestamp - this.state.startTime);
-    console.log(timeElapsed)
+
     this.state = {
       ...this.state,
       timeElapsed
     }
-    // console.log('tick');
-    // console.log(timestamp)
-    // console.log('timeElapsed: ' + this.state.timeElapsed + ' \n');
 
     this.timer = window.requestAnimationFrame(this.tick.bind(this))
+  }
+
+  didInsertElement() {
+    $('audio').one('canplaythrough', function() {
+      console.log(this)
+      $(this)[0].currentTime = 14
+        console.log(this.currentTime)
+    })
   }
 }

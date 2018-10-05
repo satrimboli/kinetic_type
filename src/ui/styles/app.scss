@@ -3,12 +3,45 @@
   height: 480px;
   border: 1px solid #000;
   margin: 0 auto;
+
+  background: #222;
+  color: #ddd;
+  // font-family: 'Merriweather', serif;
+  font-family: Futura, sans-serif;
+
+  text-align: center;
+  font-size: 16px;
 }
 
-.start-stop {
-  display: block;
-  margin: 25px auto;
-  padding: 5px 10px;
+.is-hidden {
+  opacity: 0;
+}
 
-  font-size: 14px;
+.is-visible {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.vertically-centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text-1,
+.text-2 {
+  overflow: hidden;
+
+  &.is-hidden {
+    height: 0;
+  }
+
+  &.is-visible {
+    height: 20px;
+    transition: all 0.5s;
+  }
+}
+
+.text-2 {
+  text-transform: uppercase;
 }
